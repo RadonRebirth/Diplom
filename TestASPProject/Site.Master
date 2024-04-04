@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TestASPProject.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - мое приложение 2FactorAuth</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Home">2FactorAuth</a>
+                </div>
+                <div class="navbar-collapse collapse" style="margin-top:10px">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><asp:Button ID="Emploeers" runat="server" CssClass="btn btn-primary" Text="Сотрудники"  OnClick="EmploeersButton_Click"  /></li>
+                        <li><asp:Button ID="Tasks" runat="server" CssClass="btn btn-primary" Text="Задачи"  OnClick="TaskButton_Click"  /></li>
+                        <li><asp:Button ID="Profil" runat="server" CssClass="btn btn-primary" Text="Профиль"  OnClick="ProfilButton_Click"  /></li>
+                        <li><asp:Button ID="LogoutButton" runat="server" CssClass="btn btn-primary" Text="Выйти"  OnClick="LogoutButton_Click"  /></li>
+                        <li><asp:Button ID="LoginButton" runat="server" CssClass="btn btn-primary" Text="Войти"  OnClick="LoginButton_Click"  /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - приложение 2FactorAuth</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
