@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 namespace TestASPProject
 {
-    public partial class Baidge : System.Web.UI.Page
+    public partial class Empls : System.Web.UI.Page
     {
         private const string connectionString = "Data Source=RADON;Initial Catalog=ASProject;Integrated Security=True;";
 
@@ -44,7 +44,6 @@ namespace TestASPProject
                 if (masterPage != null)
                 {
                     var loginButton = masterPage.FindControl("LoginButton") as Button;
-                    var logoutButton = masterPage.FindControl("LogoutButton") as Button;
                     if (loginButton != null)
                     {
                         loginButton.Enabled = false;

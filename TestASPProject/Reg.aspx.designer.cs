@@ -11,7 +11,7 @@ namespace TestASPProject
 {
 
 
-    public partial class Default
+    public partial class Reg
     {
 
         /// <summary>

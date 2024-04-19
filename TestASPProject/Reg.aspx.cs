@@ -6,7 +6,7 @@ using System.Web.UI;
 
 namespace TestASPProject
 {
-    public partial class Default : Page
+    public partial class Reg : Page
     {
         private const string connectionString = "Data Source=RADON;Initial Catalog=ASProject;Integrated Security=True;";
 
@@ -49,6 +49,14 @@ namespace TestASPProject
                 {
                     errorLabel.ForeColor = Color.Red;
                     errorLabel.Text = "*Введите имя пользователя и пароль.";
+                    return;
+                }
+
+                // Проверка пароля на стандарты качественного пароля
+                if (!Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"))
+                {
+                    errorLabel.ForeColor = Color.Red;
+                    errorLabel.Text = "*Пароль должен содержать как минимум одну заглавную букву, одну строчную букву и одну цифру, и быть длиной не менее 8 символов.";
                     return;
                 }
 

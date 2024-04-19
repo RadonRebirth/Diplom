@@ -11,7 +11,7 @@ namespace TestASPProject
 {
 
 
-    public partial class Baidge
+    public partial class Empls
     {
 
         /// <summary>

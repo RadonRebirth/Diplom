@@ -216,13 +216,13 @@
   <ItemGroup>
     <Content Include="Home.aspx" />
     <Content Include="Auth.aspx" />
-    <Content Include="Baidge.aspx" />
+    <Content Include="Empls.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Reg.aspx" />
     <Content Include="Tasks.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -273,20 +273,19 @@
     <Compile Include="Auth.aspx.designer.cs">
       <DependentUpon>Auth.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Baidge.aspx.cs">
-      <DependentUpon>Baidge.aspx</DependentUpon>
+    <Compile Include="Empls.aspx.cs">
+      <DependentUpon>Empls.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Baidge.aspx.designer.cs">
-      <DependentUpon>Baidge.aspx</DependentUpon>
+    <Compile Include="Empls.aspx.designer.cs">
+      <DependentUpon>Empls.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BaidgeGenerator.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Reg.aspx.cs">
+      <DependentUpon>Reg.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Reg.aspx.designer.cs">
+      <DependentUpon>Reg.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasks.aspx.cs">
       <DependentUpon>Tasks.aspx</DependentUpon>

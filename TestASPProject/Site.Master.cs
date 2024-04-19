@@ -37,7 +37,7 @@ namespace TestASPProject
 
         public void LoginButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/Reg.aspx");
 
         }
         
@@ -48,7 +48,7 @@ namespace TestASPProject
         }
         protected void EmploeersButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Baidge.aspx?UserId=" + Session["UserId"]);
+            Response.Redirect("~/Empls.aspx?UserId=" + Session["UserId"]);
         }
 
         protected void ProfilButton_Click(object sender, EventArgs e)

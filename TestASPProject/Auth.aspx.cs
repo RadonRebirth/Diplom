@@ -35,6 +35,14 @@ namespace TestASPProject
                 return;
             }
 
+            // Проверка пароля на стандарты качественного пароля
+            if (!Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"))
+            {
+                errorTxt.ForeColor = Color.Red;
+                errorTxt.Text = "*Пароль должен содержать как минимум одну заглавную букву, одну строчную букву и одну цифру, и быть длиной не менее 8 символов.";
+                return;
+            }
+
             if (AuthenticateUser(username, password))
             {
                 Session["UserId"] = GetUserId(username);
@@ -184,7 +192,15 @@ namespace TestASPProject
                 return;
             }
 
-            string secretCode = GenerateSecretCode(); 
+            // Проверка адреса электронной почты на валидность
+            if (!Regex.IsMatch(emailTo, @"^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"))
+            {
+                errorTxt.ForeColor = Color.Red;
+                errorTxt.Text = "Пожалуйста, введите корректный адрес электронной почты.";
+                return;
+            }
+
+            string secretCode = GenerateSecretCode();
 
             try
             {
@@ -208,7 +224,7 @@ namespace TestASPProject
                 myMail.IsBodyHtml = true;
 
                 mySmtpClient.Send(myMail);
-                Session["SecretCode"] = secretCode; 
+                Session["SecretCode"] = secretCode;
 
                 errorTxt.ForeColor = Color.Green;
                 errorTxt.Text = $"Код отправлен на указанный адрес электронной почты.";

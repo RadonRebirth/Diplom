@@ -1,4 +1,4 @@
-﻿<%@ Page Title="TestASP" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TestASPProject.Default" %>
+﻿<%@ Page Title="TestASP" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reg.aspx.cs" Inherits="TestASPProject.Reg" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
