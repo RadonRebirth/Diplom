@@ -19,7 +19,7 @@
             <asp:TextBox ID="txtPasswordVF" runat="server" TextMode="Password" Width="177px" CssClass="form-control" Height="25px" ToolTip="Повторно введите пароль"></asp:TextBox>
         </div>
         <div style="margin-top:20px; margin-left: 430px">
-         <asp:Button ID="Button1" runat="server"  Text="Зарегистрироваться" CssClass="btn btn-success" OnClick="Button1_Click" />
+         <asp:Button ID="Button1" runat="server"  Text="Зарегистрироваться" CssClass="btn btn-success" OnClick="ButtonReg_Click" />
         </div>
         <div style="margin-left:430px; margin-top:20px; display:grid">
             <asp:HyperLink ID="hyperLink" runat="server" NavigateUrl="~/Auth.aspx">Уже зарегистрированы?</asp:HyperLink>

@@ -35,7 +35,17 @@ namespace TestASPProject
             }
         }
 
-        public void Button1_Click(object sender, EventArgs e)
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
+
+        public void ButtonReg_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -89,11 +99,13 @@ namespace TestASPProject
                     return;
                 }
 
+                string hashedPassword = HashPassword(password);
+
                 string insertUserQuery = "INSERT INTO Users (Username, Password) VALUES (@username, @password)";
                 using (SqlCommand command = new SqlCommand(insertUserQuery, connection))
                 {
                     command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@password", hashedPassword);
                     try
                     {
                         command.ExecuteNonQuery();

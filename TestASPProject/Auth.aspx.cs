@@ -16,6 +16,16 @@ namespace TestASPProject
         private const string connectionString = "Data Source=RADON;Initial Catalog=ASProject;Integrated Security=True;";
         public bool isQr = false;
         public bool isEmail = false;
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -43,7 +53,10 @@ namespace TestASPProject
                 return;
             }
 
-            if (AuthenticateUser(username, password))
+
+            string hashedPassword = HashPassword(password);
+
+            if (AuthenticateUser(username, hashedPassword))
             {
                 Session["UserId"] = GetUserId(username);
                 errorTxt.ForeColor = Color.Green;
